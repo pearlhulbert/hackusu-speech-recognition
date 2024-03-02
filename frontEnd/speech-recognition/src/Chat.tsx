@@ -13,11 +13,13 @@ export const Chat: React.FC<ChatProps> = ({ selectedVoice }) => {
   const responses: string[] = ["Heyyyy", "What's up?", "How are you doing?"];
 
   return (
+    
     <div>
         <header className={styles.mainView}>
-        <p className={styles.title}>Voice Source:{selectedVoice}</p>
+            
+        <h4 className={styles.title}>Voice Source:{selectedVoice}</h4>
         </header>     
-      <ChatBubble side = 'right' content='Heyyyy' />
+      <ChatBubble side = 'right' content='Heyyy' />
       <Responses responses={responses} />
     </div>
   );
