@@ -5,6 +5,7 @@ interface Props {
 	side: string;
 }
 
+
 export function ChatBubble({ content, side }: Props) {
 	return (
 		

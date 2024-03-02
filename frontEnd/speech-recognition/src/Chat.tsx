@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Responses } from './components/Responses';
 import { ChatBubble } from './components/ChatBubble';
+import styles from './styles/Header.module.css';
 
 
 interface ChatProps {
   selectedVoice: string;
 }
+  
 
 export const Chat: React.FC<ChatProps> = ({ selectedVoice }) => {
   const [message, setMessage] = useState('');
@@ -14,9 +16,9 @@ export const Chat: React.FC<ChatProps> = ({ selectedVoice }) => {
     console.log(selectedVoice);
 
     let voice: string  = '';
-    if (selectedVoice === 'Voice 1') {
+    if (selectedVoice === 'Speaker 1') {
       voice = 'voice1';
-    } else if (selectedVoice === 'Voice 2') {
+    } else if (selectedVoice === 'Speaker 2') {
       voice = 'voice2';
     } 
 
@@ -48,11 +50,14 @@ export const Chat: React.FC<ChatProps> = ({ selectedVoice }) => {
   
 
   return (
+    
     <div>
-      <h2>Chat Page</h2>
-      <p>You have selected: {selectedVoice}</p>
-      <ChatBubble side='right' content={message} />
-      <Responses message={message} />
+        <header className={styles.mainView}>
+            
+        <h4 className={styles.title}>Voice Source:{selectedVoice}</h4>
+        </header>     
+      <ChatBubble side = 'right' content={message} />
+      <Responses responses={message} />
     </div>
   );
 };

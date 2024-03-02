@@ -1,11 +1,31 @@
 .mainView {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #DCE7F9;
-  padding: 20px 30px 20px 30px
+  padding: 20px 30px 20px 30px;
+  align-items: center;
 }
+
+.mainView1 {
+  display: flex;
+  justify-content: center;
+  background-color:  #CFC2FF;
+  padding: 20px 30px 20px 30px;
+  align-items: center;
+}
+
+.mainView2 {
+  display: flex;
+  justify-content: center;
+  background-color: #b1f180;
+  padding: 20px 30px 20px 30px;
+  align-items: center;
+}
+
 
 .title {
   color: black;
   font-size: 20px;
+  text-align: center;
+  align-items: center;
 }

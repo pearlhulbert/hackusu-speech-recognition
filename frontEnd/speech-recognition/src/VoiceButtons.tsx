@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './styles/Responses.module.css';
+import styles1 from './styles/Header.module.css';
 
 interface VoiceButtonsProps {
   setSelectedVoice: (voice: string) => void;
@@ -11,18 +13,18 @@ const VoiceButtons: React.FC<VoiceButtonsProps> = ({ setSelectedVoice }) => {
 
     return (
         <div style={{ padding: '20px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div className={styles1.mainView}>
                 <div>
-                    <p>Select a voice to start</p>
+                  <h4>Select a Speaker to start</h4>
                 </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                <button style={{ fontSize: '24px', padding: '10px 20px' }} onClick={() => handleVoiceSelection('Voice 1')}>Voice 1</button>
-                <button style={{ fontSize: '24px', padding: '10px 20px' }} onClick={() => handleVoiceSelection('Voice 2')}>Voice 2</button>
-                <button style={{ fontSize: '24px', padding: '10px 20px' }} onClick={() => handleVoiceSelection('Voice 3')}>Voice 3</button>
-            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , height: '35vh'}}>
+              <div style={ {display: 'flex'} }>
+              <button className = {styles.response} onClick={() => handleVoiceSelection('Speaker 1')}>Speaker 1</button>
+                <button className = {styles.response2} onClick={() => handleVoiceSelection('Speaker 2')}>Speaker 2</button>
+              </div>
+              </div>             
         </div>
     );
 };
-
 export default VoiceButtons;
