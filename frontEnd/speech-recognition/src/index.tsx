@@ -9,9 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App onSelectVoice={function (voice: string): void {
-      throw new Error('Function not implemented.');
-    } } />
+    <App />
   </React.StrictMode>
 );
 
