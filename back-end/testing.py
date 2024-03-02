@@ -9,7 +9,7 @@ import os
 diarizer = SpeakerDiarizer()
 transcriber = Transcriber()
 
-audio_file = "Test2.mp3"
+audio_file = "Demo2.mp3"
 diarization_result = diarizer.diarize_audio(audio_file)
 
 # Load the audio file

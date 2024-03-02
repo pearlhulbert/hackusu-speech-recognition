@@ -1,12 +1,39 @@
-
+import React, { useState } from 'react';
 import styles from '../styles/Responses.module.css';
 
 interface Props {
-	responses: string[];
+    message: string;
 }
 
-export function Responses({ responses}: Props) {
-	return (
+export function Responses({ message }: Props) {
+    const [responses, setResponses] = useState<string[]>(["", "", ""]);
+
+    const fetchResponses = async () => {
+        if (message) {
+            try {
+                const response = await fetch('http://localhost:8000/generate-chat-response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json() as string[];
+                console.log(data)
+                setResponses(data);
+            } catch (error) {
+                console.error('Error fetching responses:', error);
+                setResponses(["Error fetching responses", "", ""]);
+            }
+        }
+    };
+
+    return (
 		<div className={styles.bottom}>
 			<div className={styles.responses}>
 			{responses.length > 0 && (
@@ -18,9 +45,7 @@ export function Responses({ responses}: Props) {
 							<button
 								className={styles.response}
 								key={index}
-								onClick={() => {
-									console.log("yay")
-								}}
+								onClick={() => {fetchResponses}}
 								style={{
 									visibility: response == ' ' ? 'hidden' : 'visible',
 									pointerEvents: response == ' ' ? 'none' : 'auto',
@@ -33,9 +58,5 @@ export function Responses({ responses}: Props) {
 					))}
 				</div>
 			)}
-		</div>
-
-		</div>
-		
-	);
+     </div> );
 }
