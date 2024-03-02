@@ -7,7 +7,8 @@ interface Props {
 
 export function Responses({ responses}: Props) {
 	return (
-		<div className={styles.responses}>
+		<div className={styles.bottom}>
+			<div className={styles.responses}>
 			{responses.length > 0 && (
 				<div className={styles.responsesList}>
 					{responses.map((response, index) => (
@@ -33,5 +34,8 @@ export function Responses({ responses}: Props) {
 				</div>
 			)}
 		</div>
+
+		</div>
+		
 	);
 }

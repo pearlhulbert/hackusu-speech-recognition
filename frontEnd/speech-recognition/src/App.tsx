@@ -7,9 +7,10 @@ const App: React.FC = () => {
 
   return (
     <div>
-      {!selectedVoice 
+      {!selectedVoice // if selectedVoice is falsy, then render this
         ? <VoiceButtons setSelectedVoice={setSelectedVoice} />
-        : <Chat selectedVoice={selectedVoice} />}
+        : <Chat selectedVoice={selectedVoice} /> // if selectedVoice is true, then render this
+        }  
     </div>
   );
 };

@@ -1,6 +1,5 @@
 .messageBar {
 	width: 100%;
-
 	display: flex;
 	flex-direction: row;
 	word-wrap: break-word;
@@ -14,18 +13,19 @@
 
 .chatBubble {
 	font-size: 20px;
-
+	background-color: #abcdff;
 	max-width: 70%;
-	border-radius: 20px 20px 0px 20px;
+	border-radius: 20px 20px 20px 20px;
 	padding: 20px;
 	box-sizing: border-box;
 }
 .chatBubble_left {
-	background-color: #75A6EF;
+	background-color: #94b9f0;
 	color: #515151;
-	border-radius: 20px 20px 20px 0px;
+	border-radius: 20px 20px 0px 0px;
 }
 .chatBubble_right {
-	background-color: #75A6EF;
-	color: white;
+	background-color: #94b9f0;
+	color: #515151;
+	border-radius: 0px 20px 20px 20px;
 }

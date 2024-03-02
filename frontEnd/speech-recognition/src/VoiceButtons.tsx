@@ -19,7 +19,6 @@ const VoiceButtons: React.FC<VoiceButtonsProps> = ({ setSelectedVoice }) => {
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 <button style={{ fontSize: '24px', padding: '10px 20px' }} onClick={() => handleVoiceSelection('Voice 1')}>Voice 1</button>
                 <button style={{ fontSize: '24px', padding: '10px 20px' }} onClick={() => handleVoiceSelection('Voice 2')}>Voice 2</button>
-                <button style={{ fontSize: '24px', padding: '10px 20px' }} onClick={() => handleVoiceSelection('Voice 3')}>Voice 3</button>
             </div>
         </div>
     );
