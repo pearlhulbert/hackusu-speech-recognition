@@ -1,1 +1,4 @@
 frontEnd/speech-recognition/node_modules
+back-end/venv
+back-end/__pycache__
+back-end/.env
