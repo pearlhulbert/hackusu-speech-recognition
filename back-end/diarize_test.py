@@ -6,7 +6,7 @@ pipeline = Pipeline.from_pretrained(
   use_auth_token="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")
 
 # Run the pipeline on an audio file
-diarization = pipeline("Test2.mp3")
+diarization = pipeline("DemoHackUSU.mp3")
 
 # Dump the diarization output to disk using RTTM format
 with open("audio.rttm", "w") as rttm:
