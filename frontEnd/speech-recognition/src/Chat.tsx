@@ -54,10 +54,10 @@ export const Chat: React.FC<ChatProps> = ({ selectedVoice }) => {
     <div>
         <header className={styles.mainView}>
             
-        <h4 className={styles.title}>Voice Source:{selectedVoice}</h4>
+        <h4 className={styles.title}>{selectedVoice}</h4>
         </header>     
       <ChatBubble side = 'right' content={message} />
-      <Responses responses={message} />
+      <Responses message={message} />
     </div>
   );
 };
